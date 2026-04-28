@@ -1,0 +1,10 @@
+bin/
+obj/
+local.props
+*.user
+*.zip
+dist/
+pack/.godot/
+pack/project.godot
+pack/mod_manifest.json
+*.import
