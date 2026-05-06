@@ -12,7 +12,7 @@
 		<ModName>EnchantedOfferings</ModName>
 		<ModDisplayName>Enchanted Offerings</ModDisplayName>
 		<ModAuthor>themagickoala</ModAuthor>
-		<ModVersion>1.0.0</ModVersion>
+		<ModVersion>0.0.1</ModVersion>
 
 		<AssemblyName>$(ModName)</AssemblyName>
 		<Version>$(ModVersion)</Version>
