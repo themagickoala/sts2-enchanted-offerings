@@ -12,7 +12,7 @@
 		<ModName>EnchantedOfferings</ModName>
 		<ModDisplayName>Enchanted Offerings</ModDisplayName>
 		<ModAuthor>themagickoala</ModAuthor>
-		<ModVersion>0.0.1</ModVersion>
+		<ModVersion>0.0.2</ModVersion>
 
 		<AssemblyName>$(ModName)</AssemblyName>
 		<Version>$(ModVersion)</Version>
@@ -31,6 +31,12 @@
 		<GameDataDir>$(STS2GamePath)/$(GameDataDirName)</GameDataDir>
 		<PackProject>$(ProjectDir)pack</PackProject>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Alchyr.Sts2.BaseLib" Version="3.1.0">
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</PackageReference>
+	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="GodotSharp">
@@ -87,7 +93,7 @@ project/assembly_name="$(ModName)"
   "has_dll": true,
   "has_pck": true,
   "affects_gameplay": true,
-  "dependencies": ["ModConfig"]
+  "dependencies": ["BaseLib"]
 }</GameManifestContent>
 		</PropertyGroup>
 		<WriteLinesToFile File="$(ModsOutputDir)/mod_manifest.json" Lines="$(GameManifestContent)" Overwrite="true" Encoding="UTF-8" />

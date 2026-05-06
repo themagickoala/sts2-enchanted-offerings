@@ -10,7 +10,7 @@ static class BundleScreenPatch
 {
     static void Prefix(IReadOnlyList<IReadOnlyList<CardModel>> bundles)
     {
-        if (!Settings.Enabled || !Settings.ModifyInstant) return;
+        if (!EnchantedOfferingsConfig.Enabled || !EnchantedOfferingsConfig.ModifyInstant) return;
         foreach (var bundle in bundles)
             foreach (var card in bundle)
             {

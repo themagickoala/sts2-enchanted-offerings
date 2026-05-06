@@ -4,10 +4,11 @@ using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using BaseLib.Abstracts;
 
 namespace EnchantedOfferings;
 
-public sealed class Piercing : EnchantmentModel
+public sealed class Piercing : CustomEnchantmentModel
 {
     public override bool HasExtraCardText => true;
 

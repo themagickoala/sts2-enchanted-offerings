@@ -1,0 +1,11 @@
+{
+  "ENCHANTEDOFFERINGS-ENABLED.title": "Enable Card Augments",
+  "ENCHANTEDOFFERINGS-MOD_CHANCE.title": "Augment Chance (%)",
+  "ENCHANTEDOFFERINGS-COMMON_WEIGHT.title": "Common Augment Weight",
+  "ENCHANTEDOFFERINGS-UNCOMMON_WEIGHT.title": "Uncommon Augment Weight",
+  "ENCHANTEDOFFERINGS-RARE_WEIGHT.title": "Rare Augment Weight",
+  "ENCHANTEDOFFERINGS-RARITY_BIAS.title": "Card Rarity Bias",
+  "ENCHANTEDOFFERINGS-MODIFY_STARTER.title": "Augment Starter Cards",
+  "ENCHANTEDOFFERINGS-MODIFY_INSTANT.title": "Augment Instant-Obtain Cards",
+  "ENCHANTEDOFFERINGS-MODIFY_SHOP.title": "Augment Shop Cards"
+}

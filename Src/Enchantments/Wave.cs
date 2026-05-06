@@ -6,10 +6,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using BaseLib.Abstracts;
 
 namespace EnchantedOfferings;
 
-public sealed class Wave : EnchantmentModel
+public sealed class Wave : CustomEnchantmentModel
 {
     public override bool HasExtraCardText => true;
     public override bool ShowAmount => true;

@@ -5,11 +5,12 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Models;
 
 namespace EnchantedOfferings;
 
-public sealed class Handy : EnchantmentModel
+public sealed class Handy : CustomEnchantmentModel
 {
     public override bool HasExtraCardText => true;
     public override bool ShowAmount => true;

@@ -18,7 +18,7 @@ internal class EnchantedOfferingsHook : AbstractModel
 
     public override Task AfterMapGenerated(ActMap map, int actIndex)
     {
-        if (!Settings.ModifyStarter || actIndex != 0) return Task.CompletedTask;
+        if (!EnchantedOfferingsConfig.ModifyStarter || actIndex != 0) return Task.CompletedTask;
 
         var runState = _runManagerState.GetValue(RunManager.Instance) as IRunState;
         if (runState == null) return Task.CompletedTask;
@@ -41,7 +41,7 @@ internal class EnchantedOfferingsHook : AbstractModel
     public override void ModifyMerchantCardCreationResults(
         Player player, List<CardCreationResult> cards)
     {
-        if (!Settings.ModifyShop) return;
+        if (!EnchantedOfferingsConfig.ModifyShop) return;
         foreach (var result in cards)
             EnchantmentPool.TryEnchant(result.Card, result, player.RunState);
     }
@@ -49,7 +49,7 @@ internal class EnchantedOfferingsHook : AbstractModel
     public override bool TryModifyCardBeingAddedToDeck(CardModel card, out CardModel? newCard)
     {
         newCard = null;
-        if (!Settings.ModifyInstant) return false;
+        if (!EnchantedOfferingsConfig.ModifyInstant) return false;
         if (!EnchantmentPool.TryEnchantInPlace(card, card.Owner!.RunState)) return false;
 
         newCard = card;

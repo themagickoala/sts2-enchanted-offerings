@@ -8,10 +8,11 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using BaseLib.Abstracts;
 
 namespace EnchantedOfferings;
 
-public sealed class Noxious : EnchantmentModel
+public sealed class Noxious : CustomEnchantmentModel
 {
     public override bool HasExtraCardText => true;
     public override bool ShowAmount => true;

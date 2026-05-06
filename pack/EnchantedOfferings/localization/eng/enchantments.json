@@ -1,15 +1,15 @@
 {
-  "PIERCING.title": "Piercing",
-  "PIERCING.description": "Attacks bypass enemy block.",
-  "PIERCING.extraCardText": "Unblockable.",
-  "NOXIOUS.title": "Noxious",
-  "NOXIOUS.description": "On play, apply {PoisonPower} Poison to ALL enemies.",
-  "NOXIOUS.extraCardText": "Apply {PoisonPower} Poison to all enemies.",
-  "WAVE.title": "Wave",
-  "WAVE.extraCardText": "Gain {Block} Block.",
-  "TINY.title": "Tiny",
-  "TINY.description": "Cost -1. Deal and gain 25% less damage and block.",
-  "HANDY.title": "Handy",
-  "HANDY.description": "Cost +1. On play, Summon {Summon}.",
-  "HANDY.extraCardText": "Summon {Summon}."
+  "ENCHANTEDOFFERINGS-PIERCING.title": "Piercing",
+  "ENCHANTEDOFFERINGS-PIERCING.description": "Attacks bypass enemy block.",
+  "ENCHANTEDOFFERINGS-PIERCING.extraCardText": "Unblockable.",
+  "ENCHANTEDOFFERINGS-NOXIOUS.title": "Noxious",
+  "ENCHANTEDOFFERINGS-NOXIOUS.description": "On play, apply {PoisonPower} Poison to ALL enemies.",
+  "ENCHANTEDOFFERINGS-NOXIOUS.extraCardText": "Apply {PoisonPower} Poison to all enemies.",
+  "ENCHANTEDOFFERINGS-WAVE.title": "Wave",
+  "ENCHANTEDOFFERINGS-WAVE.extraCardText": "Gain {Block} Block.",
+  "ENCHANTEDOFFERINGS-TINY.title": "Tiny",
+  "ENCHANTEDOFFERINGS-TINY.description": "Cost -1. Deal and gain 25% less damage and block.",
+  "ENCHANTEDOFFERINGS-HANDY.title": "Handy",
+  "ENCHANTEDOFFERINGS-HANDY.description": "Cost +1. On play, Summon {Summon}.",
+  "ENCHANTEDOFFERINGS-HANDY.extraCardText": "Summon {Summon}."
 }
