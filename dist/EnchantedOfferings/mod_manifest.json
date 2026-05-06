@@ -2,7 +2,7 @@
   "id": "EnchantedOfferings",
   "name": "Enchanted Offerings",
   "author": "themagickoala",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Randomly applies enchantments to card rewards, inspired by the STS1 Chimera Cards mod",
   "has_dll": true,
   "has_pck": true,
