@@ -11,5 +11,7 @@
   "ENCHANTEDOFFERINGS-TINY.description": "Cost -1. Deal and gain 25% less damage and block.",
   "ENCHANTEDOFFERINGS-HANDY.title": "Handy",
   "ENCHANTEDOFFERINGS-HANDY.description": "Cost +1. On play, Summon {Summon}.",
-  "ENCHANTEDOFFERINGS-HANDY.extraCardText": "Summon {Summon}."
+  "ENCHANTEDOFFERINGS-HANDY.extraCardText": "Summon {Summon}.",
+  "ENCHANTEDOFFERINGS-CUNNING.title": "Cunning",
+  "ENCHANTEDOFFERINGS-CUNNING.description": "Adds Sly."
 }

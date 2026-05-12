@@ -36,6 +36,7 @@ internal static class EnchantmentPool
         new PoolEntry(ModelDb.Enchantment<Tiny>(),              0, PoolRarity.Common),
         new PoolEntry(ModelDb.Enchantment<Wave>(),              5, PoolRarity.Common, c => c.Type == CardType.Attack),
         new PoolEntry(ModelDb.Enchantment<Piercing>(),          0, PoolRarity.Common),
+        new PoolEntry(ModelDb.Enchantment<Cunning>(),           0, PoolRarity.Common),
         // Uncommon
         new PoolEntry(ModelDb.Enchantment<Handy>(),             5, PoolRarity.Uncommon),
         new PoolEntry(ModelDb.Enchantment<Noxious>(),           2, PoolRarity.Uncommon),
