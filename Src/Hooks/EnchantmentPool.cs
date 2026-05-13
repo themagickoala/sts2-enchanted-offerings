@@ -76,12 +76,12 @@ internal static class EnchantmentPool
     {
         float baseWeight = entry.Rarity switch
         {
-            PoolRarity.Common   => EnchantedOfferingsConfig.CommonWeight,
-            PoolRarity.Uncommon => EnchantedOfferingsConfig.UncommonWeight,
-            PoolRarity.Rare     => EnchantedOfferingsConfig.RareWeight,
+            PoolRarity.Common   => EnchantedOfferingsSettingsMessage.CommonWeight,
+            PoolRarity.Uncommon => EnchantedOfferingsSettingsMessage.UncommonWeight,
+            PoolRarity.Rare     => EnchantedOfferingsSettingsMessage.RareWeight,
             _                   => 1f,
         };
-        return baseWeight * MathF.Pow(EnchantedOfferingsConfig.RarityBias, BiasExponent(entry.Rarity, cardRarity));
+        return baseWeight * MathF.Pow(EnchantedOfferingsSettingsMessage.RarityBias, BiasExponent(entry.Rarity, cardRarity));
     }
 
     private static PoolEntry? TryPickEntry(CardModel card, IRunState runState)
@@ -108,10 +108,10 @@ internal static class EnchantmentPool
 
     internal static bool TryEnchant(CardModel card, CardCreationResult result, IRunState runState)
     {
-        if (!EnchantedOfferingsConfig.Enabled) return false;
+        if (!EnchantedOfferingsSettingsMessage.Enabled) return false;
         if (!_seen.TryAdd(result, null)) return false;
         _processedCards.TryAdd(card, null);
-        if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsConfig.ModChance) return false;
+        if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsSettingsMessage.ModChance) return false;
 
         var entry = TryPickEntry(card, runState);
         if (entry == null) return false;
@@ -125,7 +125,7 @@ internal static class EnchantmentPool
     internal static bool TryEnchantInPlace(CardModel card, IRunState runState)
     {
         if (_processedCards.TryGetValue(card, out _)) return false;
-        if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsConfig.ModChance) return false;
+        if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsSettingsMessage.ModChance) return false;
 
         var entry = TryPickEntry(card, runState);
         if (entry == null) return false;
@@ -139,7 +139,7 @@ internal static class EnchantmentPool
     internal static void TryEnchantForDisplay(CardModel card, IRunState runState)
     {
         _processedCards.TryAdd(card, null);
-        if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsConfig.ModChance) return;
+        if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsSettingsMessage.ModChance) return;
 
         var entry = TryPickEntry(card, runState);
         if (entry == null) return;
