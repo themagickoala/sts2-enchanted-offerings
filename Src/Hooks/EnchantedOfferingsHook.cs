@@ -1,9 +1,11 @@
 using System.Reflection;
+using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.Map;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Multiplayer.Game;
 using MegaCrit.Sts2.Core.Runs;
 
 namespace EnchantedOfferings;
@@ -18,7 +20,14 @@ internal class EnchantedOfferingsHook : AbstractModel
 
     public override Task AfterMapGenerated(ActMap map, int actIndex)
     {
-        if (!EnchantedOfferingsConfig.ModifyStarter || actIndex != 0) return Task.CompletedTask;
+        if (actIndex == 0)
+        {
+            EnchantedOfferingsSettingsMessage.SyncFromConfig();
+            if (RunManager.Instance.NetService.Type == NetGameType.Host)
+                CustomMessageWrapper.Send(EnchantedOfferingsSettingsMessage.FromConfig());
+        }
+
+        if (!EnchantedOfferingsSettingsMessage.ModifyStarter || actIndex != 0) return Task.CompletedTask;
 
         var runState = _runManagerState.GetValue(RunManager.Instance) as IRunState;
         if (runState == null) return Task.CompletedTask;
@@ -41,7 +50,7 @@ internal class EnchantedOfferingsHook : AbstractModel
     public override void ModifyMerchantCardCreationResults(
         Player player, List<CardCreationResult> cards)
     {
-        if (!EnchantedOfferingsConfig.ModifyShop) return;
+        if (!EnchantedOfferingsSettingsMessage.ModifyShop) return;
         foreach (var result in cards)
             EnchantmentPool.TryEnchant(result.Card, result, player.RunState);
     }
@@ -49,7 +58,7 @@ internal class EnchantedOfferingsHook : AbstractModel
     public override bool TryModifyCardBeingAddedToDeck(CardModel card, out CardModel? newCard)
     {
         newCard = null;
-        if (!EnchantedOfferingsConfig.ModifyInstant) return false;
+        if (!EnchantedOfferingsSettingsMessage.ModifyInstant) return false;
         if (!EnchantmentPool.TryEnchantInPlace(card, card.Owner!.RunState)) return false;
 
         newCard = card;
