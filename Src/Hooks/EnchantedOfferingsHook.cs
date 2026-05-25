@@ -16,7 +16,7 @@ internal class EnchantedOfferingsHook : AbstractModel
     private static readonly PropertyInfo _runManagerState =
         typeof(RunManager).GetProperty("State", BindingFlags.NonPublic | BindingFlags.Instance)!;
 
-    public override bool ShouldReceiveCombatHooks => false;
+    public override bool ShouldReceiveCombatHooks => true;
 
     public override Task AfterMapGenerated(ActMap map, int actIndex)
     {
@@ -40,6 +40,13 @@ internal class EnchantedOfferingsHook : AbstractModel
             foreach (var card in player.Deck.Cards)
                 EnchantmentPool.TryEnchantInPlace(card, runState);
 
+        return Task.CompletedTask;
+    }
+
+    public override Task AfterCardGeneratedForCombat(CardModel card, Player? creator)
+    {
+        if (EnchantedOfferingsSettingsMessage.ModifyCombatGenerated && creator != null)
+            EnchantmentPool.TryEnchantInPlace(card, creator.RunState);
         return Task.CompletedTask;
     }
 

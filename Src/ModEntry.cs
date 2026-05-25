@@ -1,6 +1,7 @@
 using System.Reflection;
 using BaseLib.Config;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Runs;
@@ -15,10 +16,16 @@ public class ModEntry
         new Harmony("EnchantedOfferings").PatchAll(Assembly.GetExecutingAssembly());
 
         ModHelper.SubscribeForRunStateHooks("EnchantedOfferings", GetRunHooks);
+        ModHelper.SubscribeForCombatStateHooks("EnchantedOfferings", GetCombatHooks);
         ModConfigRegistry.Register("EnchantedOfferings", new EnchantedOfferingsConfig());
     }
 
     private static IEnumerable<AbstractModel> GetRunHooks(RunState runState)
+    {
+        yield return ModelDb.GetById<EnchantedOfferingsHook>(ModelDb.GetId<EnchantedOfferingsHook>());
+    }
+
+    private static IEnumerable<AbstractModel> GetCombatHooks(CombatState combatState)
     {
         yield return ModelDb.GetById<EnchantedOfferingsHook>(ModelDb.GetId<EnchantedOfferingsHook>());
     }
