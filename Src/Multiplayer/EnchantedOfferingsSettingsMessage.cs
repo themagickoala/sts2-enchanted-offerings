@@ -17,6 +17,7 @@ internal class EnchantedOfferingsSettingsMessage : ICustomMessage
     public static float RarityBias = 1f;
     public static bool ModifyStarter = true;
     public static bool ModifyShop = true;
+    public static bool ModifyCombatGenerated = true;
 
     // Message payload fields
     public bool MsgEnabled;
@@ -27,6 +28,7 @@ internal class EnchantedOfferingsSettingsMessage : ICustomMessage
     public float MsgRarityBias;
     public bool MsgModifyStarter;
     public bool MsgModifyShop;
+    public bool MsgModifyCombatGenerated;
 
     public bool ShouldBroadcast => true;
 
@@ -40,6 +42,7 @@ internal class EnchantedOfferingsSettingsMessage : ICustomMessage
         RarityBias = EnchantedOfferingsConfig.RarityBias;
         ModifyStarter = EnchantedOfferingsConfig.ModifyStarter;
         ModifyShop = EnchantedOfferingsConfig.ModifyShop;
+        ModifyCombatGenerated = EnchantedOfferingsConfig.ModifyCombatGenerated;
     }
 
     public static EnchantedOfferingsSettingsMessage FromConfig() => new()
@@ -52,6 +55,7 @@ internal class EnchantedOfferingsSettingsMessage : ICustomMessage
         MsgRarityBias = EnchantedOfferingsConfig.RarityBias,
         MsgModifyStarter = EnchantedOfferingsConfig.ModifyStarter,
         MsgModifyShop = EnchantedOfferingsConfig.ModifyShop,
+        MsgModifyCombatGenerated = EnchantedOfferingsConfig.ModifyCombatGenerated,
     };
 
     public void HandleMessage(ulong senderId)
@@ -64,6 +68,7 @@ internal class EnchantedOfferingsSettingsMessage : ICustomMessage
         RarityBias = MsgRarityBias;
         ModifyStarter = MsgModifyStarter;
         ModifyShop = MsgModifyShop;
+        ModifyCombatGenerated = MsgModifyCombatGenerated;
     }
 
     public void Serialize(PacketWriter writer)
@@ -76,6 +81,7 @@ internal class EnchantedOfferingsSettingsMessage : ICustomMessage
         writer.WriteFloat(MsgRarityBias);
         writer.WriteBool(MsgModifyStarter);
         writer.WriteBool(MsgModifyShop);
+        writer.WriteBool(MsgModifyCombatGenerated);
     }
 
     public void Deserialize(PacketReader reader)
@@ -88,5 +94,6 @@ internal class EnchantedOfferingsSettingsMessage : ICustomMessage
         MsgRarityBias = reader.ReadFloat();
         MsgModifyStarter = reader.ReadBool();
         MsgModifyShop = reader.ReadBool();
+        MsgModifyCombatGenerated = reader.ReadBool();
     }
 }

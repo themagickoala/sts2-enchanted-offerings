@@ -23,4 +23,5 @@ internal class EnchantedOfferingsConfig : SimpleModConfig
 
     public static bool ModifyStarter { get; set; } = true;
     public static bool ModifyShop { get; set; } = true;
+    public static bool ModifyCombatGenerated { get; set; } = true;
 }
