@@ -28,4 +28,4 @@ jobs:
           file_group_id: ${{ contains(github.ref_name, 'beta') && '7415963' || '7389833' }}
           filename: EnchantedOfferings.zip
           version: ${{ github.ref_name }}
-          file_category: main
+          file_category: ${{ contains(github.ref_name, 'beta') && 'miscellaneous' || 'main' }}
