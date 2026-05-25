@@ -27,9 +27,8 @@ public sealed class Tiny : CustomEnchantmentModel
         return 0.75m;
     }
 
-    public override decimal EnchantBlockMultiplicative(decimal originalBlock, ValueProp props)
+    public override decimal EnchantBlockMultiplicative(decimal originalBlock)
     {
-        if (!props.IsPoweredCardOrMonsterMoveBlock()) return 1m;
         return 0.75m;
     }
 }
