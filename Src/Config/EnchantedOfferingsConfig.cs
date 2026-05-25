@@ -22,6 +22,5 @@ internal class EnchantedOfferingsConfig : SimpleModConfig
     public static float RarityBias { get; set; } = 1f;
 
     public static bool ModifyStarter { get; set; } = true;
-    public static bool ModifyInstant { get; set; } = true;
     public static bool ModifyShop { get; set; } = true;
 }

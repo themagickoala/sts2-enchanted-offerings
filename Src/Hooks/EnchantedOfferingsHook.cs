@@ -49,7 +49,6 @@ internal class EnchantedOfferingsHook : AbstractModel
     public override bool TryModifyCardBeingAddedToDeck(CardModel card, out CardModel? newCard)
     {
         newCard = null;
-        if (!EnchantedOfferingsConfig.ModifyInstant) return false;
         if (!EnchantmentPool.TryEnchantInPlace(card, card.Owner!.RunState)) return false;
 
         newCard = card;
