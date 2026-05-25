@@ -22,9 +22,13 @@ internal class EnchantedOfferingsHook : AbstractModel
     {
         if (actIndex == 0)
         {
-            EnchantedOfferingsSettingsMessage.SyncFromConfig();
-            if (RunManager.Instance.NetService.Type == NetGameType.Host)
-                CustomMessageWrapper.Send(EnchantedOfferingsSettingsMessage.FromConfig());
+            var netType = RunManager.Instance.NetService.Type;
+            if (netType != NetGameType.Client)
+            {
+                EnchantedOfferingsSettingsMessage.SyncFromConfig();
+                if (netType == NetGameType.Host)
+                    CustomMessageWrapper.Send(EnchantedOfferingsSettingsMessage.FromConfig());
+            }
         }
 
         if (!EnchantedOfferingsSettingsMessage.ModifyStarter || actIndex != 0) return Task.CompletedTask;
