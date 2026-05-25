@@ -61,9 +61,13 @@ internal class EnchantedOfferingsHook : AbstractModel
     public override void ModifyMerchantCardCreationResults(
         Player player, List<CardCreationResult> cards)
     {
-        if (!EnchantedOfferingsSettingsMessage.ModifyShop) return;
         foreach (var result in cards)
-            EnchantmentPool.TryEnchant(result.Card, result, player.RunState);
+        {
+            if (EnchantedOfferingsSettingsMessage.ModifyShop)
+                EnchantmentPool.TryEnchant(result.Card, result, player.RunState);
+            else
+                EnchantmentPool.MarkAsProcessed(result.Card, result);
+        }
     }
 
     public override bool TryModifyCardBeingAddedToDeck(CardModel card, out CardModel? newCard)

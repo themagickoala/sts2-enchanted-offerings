@@ -106,11 +106,17 @@ internal static class EnchantmentPool
         return null;
     }
 
+    internal static void MarkAsProcessed(CardModel card, CardCreationResult result)
+    {
+        _seen.TryAdd(result, null);
+        _processedCards.TryAdd(card, null);
+    }
+
     internal static bool TryEnchant(CardModel card, CardCreationResult result, IRunState runState)
     {
-        if (!EnchantedOfferingsSettingsMessage.Enabled) return false;
         if (!_seen.TryAdd(result, null)) return false;
         _processedCards.TryAdd(card, null);
+        if (!EnchantedOfferingsSettingsMessage.Enabled) return false;
         if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsSettingsMessage.ModChance) return false;
 
         var entry = TryPickEntry(card, runState);
@@ -124,6 +130,7 @@ internal static class EnchantmentPool
 
     internal static bool TryEnchantInPlace(CardModel card, IRunState runState)
     {
+        if (!EnchantedOfferingsSettingsMessage.Enabled) return false;
         if (_processedCards.TryGetValue(card, out _)) return false;
         if (runState.Rng.Niche.NextFloat(100f) >= EnchantedOfferingsSettingsMessage.ModChance) return false;
 
