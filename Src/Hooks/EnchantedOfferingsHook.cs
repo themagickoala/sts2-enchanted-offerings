@@ -78,4 +78,12 @@ internal class EnchantedOfferingsHook : AbstractModel
         newCard = card;
         return true;
     }
+
+    public override (PileType, CardPilePosition) ModifyCardPlayResultPileTypeAndPosition(
+        CardModel card, bool isAutoPlay, ResourceInfo resources, PileType pileType, CardPilePosition position)
+    {
+        if (pileType == PileType.Discard && card.Enchantment is Roundabout)
+            return (PileType.Hand, position);
+        return (pileType, position);
+    }
 }
