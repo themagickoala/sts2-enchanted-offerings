@@ -49,6 +49,7 @@ internal static class EnchantmentPool
         new PoolEntry(ModelDb.Enchantment<RoyallyApproved>(),   0, PoolRarity.Uncommon),
         new PoolEntry(ModelDb.Enchantment<SlumberingEssence>(), 0, PoolRarity.Uncommon),
         // Rare
+        new PoolEntry(ModelDb.Enchantment<Roundabout>(),        0, PoolRarity.Rare),
         new PoolEntry(ModelDb.Enchantment<Nimble>(),            3, PoolRarity.Rare),
         new PoolEntry(ModelDb.Enchantment<Sharp>(),             3, PoolRarity.Rare),
         new PoolEntry(ModelDb.Enchantment<Swift>(),             3, PoolRarity.Rare),

@@ -13,5 +13,8 @@
   "ENCHANTEDOFFERINGS-HANDY.description": "Cost +1. On play, Summon {Summon}.",
   "ENCHANTEDOFFERINGS-HANDY.extraCardText": "Summon {Summon}.",
   "ENCHANTEDOFFERINGS-CUNNING.title": "Cunning",
-  "ENCHANTEDOFFERINGS-CUNNING.description": "Adds Sly."
+  "ENCHANTEDOFFERINGS-CUNNING.description": "Adds Sly.",
+  "ENCHANTEDOFFERINGS-ROUNDABOUT.title": "Roundabout",
+  "ENCHANTEDOFFERINGS-ROUNDABOUT.description": "Returns to your hand when played.",
+  "ENCHANTEDOFFERINGS-ROUNDABOUT.extraCardText": "Return this card to your [gold]Hand[/gold]."
 }
