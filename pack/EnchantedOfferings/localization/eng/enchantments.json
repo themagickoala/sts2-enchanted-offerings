@@ -16,5 +16,8 @@
   "ENCHANTEDOFFERINGS-CUNNING.description": "Adds Sly.",
   "ENCHANTEDOFFERINGS-ROUNDABOUT.title": "Roundabout",
   "ENCHANTEDOFFERINGS-ROUNDABOUT.description": "Returns to your hand when played.",
-  "ENCHANTEDOFFERINGS-ROUNDABOUT.extraCardText": "Return this card to your [gold]Hand[/gold]."
+  "ENCHANTEDOFFERINGS-ROUNDABOUT.extraCardText": "Return this card to your [gold]Hand[/gold].",
+  "ENCHANTEDOFFERINGS-SPIKY.title": "Spiky",
+  "ENCHANTEDOFFERINGS-SPIKY.description": "Exhaust. On play, gain {ThornsPower} Thorns.",
+  "ENCHANTEDOFFERINGS-SPIKY.extraCardText": "Gain {ThornsPower} Thorns."
 }
