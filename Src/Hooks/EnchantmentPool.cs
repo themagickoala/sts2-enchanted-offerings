@@ -38,6 +38,7 @@ internal static class EnchantmentPool
         new PoolEntry(ModelDb.Enchantment<Piercing>(),          0, PoolRarity.Common),
         new PoolEntry(ModelDb.Enchantment<Cunning>(),           0, PoolRarity.Common),
         // Uncommon
+        new PoolEntry(ModelDb.Enchantment<Spiky>(),             3, PoolRarity.Uncommon),
         new PoolEntry(ModelDb.Enchantment<Handy>(),             5, PoolRarity.Uncommon),
         new PoolEntry(ModelDb.Enchantment<Noxious>(),           2, PoolRarity.Uncommon),
         new PoolEntry(ModelDb.Enchantment<Corrupted>(),         0, PoolRarity.Uncommon),
