@@ -79,11 +79,11 @@ internal class EnchantedOfferingsHook : AbstractModel
         return true;
     }
 
-    public override (PileType, CardPilePosition) ModifyCardPlayResultPileTypeAndPosition(
-        CardModel card, bool isAutoPlay, ResourceInfo resources, PileType pileType, CardPilePosition position)
+    public override CardLocation ModifyCardPlayResultLocation(
+        CardModel card, bool isAutoPlay, ResourceInfo resources, CardLocation cardLocation)
     {
-        if (pileType == PileType.Discard && card.Enchantment is Roundabout)
-            return (PileType.Hand, position);
-        return (pileType, position);
+        if (cardLocation.pileType == PileType.Discard && card.Enchantment is Roundabout)
+            return cardLocation with { pileType = PileType.Hand };
+        return cardLocation;
     }
 }
