@@ -93,7 +93,7 @@ project/assembly_name="$(ModName)"
   "has_dll": true,
   "has_pck": true,
   "affects_gameplay": true,
-  "dependencies": ["BaseLib"]
+  "dependencies": [{ "id": "BaseLib", "min_version": "3.1.2" }]
 }</GameManifestContent>
 		</PropertyGroup>
 		<WriteLinesToFile File="$(ModsOutputDir)/mod_manifest.json" Lines="$(GameManifestContent)" Overwrite="true" Encoding="UTF-8" />
