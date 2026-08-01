@@ -22,10 +22,10 @@ jobs:
         run: gh release create ${{ github.ref_name }} EnchantedOfferings.zip --title "${{ github.ref_name }}" --generate-notes
 
       - name: Upload to Nexus Mods
-        uses: Nexus-Mods/upload-action@v1.0.0-beta.5
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.10
         with:
           api_key: ${{ secrets.NEXUSMODS_API_KEY }}
-          file_group_id: ${{ contains(github.ref_name, 'beta') && '7415963' || '7389833' }}
+          file_id: ${{ contains(github.ref_name, 'beta') && '7415963' || '7389833' }}
           filename: EnchantedOfferings.zip
           version: ${{ github.ref_name }}
-          file_category: ${{ contains(github.ref_name, 'beta') && 'miscellaneous' || 'main' }}
+          category: ${{ contains(github.ref_name, 'beta') && 'miscellaneous' || 'main' }}
